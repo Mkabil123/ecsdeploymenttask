@@ -154,27 +154,27 @@ module "route53" {
   common_tags       = var.common_tags
 }
 
-# module "waf" {
-#   source = "../../modules/waf"
+module "waf" {
+  source = "../../modules/waf"
 
-#   app_name   = var.app_name
-#   env_name   = var.env_name
-#   aws_lb_arn = module.loadbalancer.load_balancer_arn
+  app_name   = var.app_name
+  env_name   = var.env_name
+  aws_lb_arn = module.loadbalancer.load_balancer_arn
 
-#   depends_on = [module.loadbalancer]
-# }
+  depends_on = [module.loadbalancer]
+}
 
-# module "ssl_certificate" {
-#   source = "../../modules/certificate"
+module "ssl_certificate" {
+  source = "../../modules/certificate"
 
-#   domain_name = var.domain_name
-#   zone_id     = module.route53.zone_id
-#   common_tags = var.common_tags
-# }
+  domain_name = var.domain_name
+  zone_id     = module.route53.zone_id
+  common_tags = var.common_tags
+}
 
-# module "ses" {
-#   source = "../../modules/ses"
+module "ses" {
+  source = "../../modules/ses"
 
-#   zone_id     = module.route53.zone_id
-#   domain_name = var.domain_name
-# } 
+  zone_id     = module.route53.zone_id
+  domain_name = var.domain_name
+}
