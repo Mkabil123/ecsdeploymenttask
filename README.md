@@ -64,3 +64,7 @@ To create different environments, follow these steps:
     ```sh
     ./scripts/apply.sh <ENVIRONMENT FOLDER NAME>
     ```   
+
+ ## Testing with NGINX Image
+
+For testing purposes, the configuration in `main.tf` has been set up to use the NGINX image. If you want to test the ror image please use main-domain.tf1 file make it as main.tf file.
